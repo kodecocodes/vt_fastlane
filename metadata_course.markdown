@@ -3,29 +3,29 @@
 Provide a description and the final title for the course. These descriptions must be **between 100 and 160 characters long**.
 
 ### Course Title: 
-[Programming in Swift]
+fastlane for iOS
 
 ### Course Description:
 [In this course, you will take a deep dive into the Swift language, learning about core Swift concepts like types, optionals, functions, classes, and more.]
 
 ### Difficulty Level:
-[Beginner | Intermediate | Advanced]
+Intermediate
 
 ### Prereqs - To be added as Author's Notes to first video
-* [Add any prequisite courses here]
+None
 
 ### Where to go next - To be added as Author's Notes to last video
 * [Add any recommendations for courses, books, etc. to check out after your course]
 
 ### Language, Editor and Platform versions used in this course:
 
-* **Language:** Swift 4  
-* **Platform:** iOS 11
-* **Editor**: Xcode 9
+* **Language:** Swift 4.2 / Ruby  
+* **Platform:** iOS 12
+* **Editor**: Xcode 10
 
 ### Credits
-* **Instructor:**
-* **Tech Editor:**
+* **Instructor:** Brian Schick
+* **Tech Editor:** Tim Mitra
 
 -----
 
