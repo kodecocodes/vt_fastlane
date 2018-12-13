@@ -5,7 +5,7 @@ We'll start with a quick introduction to fastlane’s website, which is located 
 **[Slide 1]**
 fastlane's home page has a nice summary of many of tool’s key capabilities, and it's perusing when you get a chance. Right now, though, we'll focus on its **Docs** section. You can get here either by the link at the top right of the landing page, or by going directly to [docs.fastlane.tools][2].
 **[Slide 2]**
-This is the home of the fastlane project’s own documentation. While we’re here, it’s worth a quick shout out that fastlane may also be used with both Android and cross-platform tools like Flutter and React Native. Naturally, we'll of course focus here solely on fastlane for iOS. 
+This is the home of the fastlane project’s own documentation. While we’re here, it’s worth a quick shout out that fastlane may also be used with both Android and cross-platform tools like Flutter and React Native. Naturally, we'll of course focus solely on fastlane for iOS in this course. 
 You'll also find a lot of helpful information here about fastlane's actions, plugins, integrations, best practices, and much more. Much of this information will become increasingly useful as you gain experience with the basics of this tool. 
 One last note before we roll up our sleeves: You'll find the rest of this episode —and in fact this entire course — involves a lot of work with Terminal and the command line. If you're not particularly comfortable working in this environment, you might want to check out our short **Command Line Basics** video course. 
 # Demo: Installing Xcode Command-line Tools
