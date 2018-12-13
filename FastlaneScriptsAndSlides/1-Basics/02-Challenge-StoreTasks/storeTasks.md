@@ -1,16 +1,20 @@
 # Intro
-As we develop iOS apps, it’s natural that we initially focus on code. We naturally obsess — in a good way — over all the implementation details of creating the best apps we can, and it’s not surprising during this phase if we live and breathe pretty much exclusively within Xcode and our other development tools during this phase.
-But apps don’t live in isolation, and as soon as we want to share, distribute, test, publish, or update our apps, we find ourselves needing to work closely with the Apple App Store. Basically, the moment you want your app to step beyond the bubble of your personal development environment, you find yourself facing the edifice of iTunes Connect, the Apple App Store, and the vast ecosystem built around these tools. 
-A quick aside… throughout this course, when referring to  iTunes Connect, the Apple App Store, and the other parts of this vast infrastructure, I’ll shorten that mouthful to the simpler terms “The App Store Ecosystem” or “infrastructure”. If I’m referring to a specific component of this ecosystem, I’ll call that out in context. Otherwise, assume that I’m referring to the whole enchilada.
-> TODO: Is there a better term for this? “The Apple Certification Infrastructure”
+**[Slide 1]** Animates to support text
+As we develop iOS apps, it's natural to think of them in terms of code, UI/UX, and other mostly developer-centric terms.
+But apps don’t live in isolation, and as soon as we want to move beyond developing in isolation, we need to share, distribute, test, publish, or update our apps, and we find ourselves needing to interact deeply with the iTunes Connect and the Apple App Store. Basically, the moment you want your app to step beyond the bubble of your personal development environment, you find yourself facing the edifice of iTunes Connect, the Apple App Store, and the vast ecosystem built around these tools. 
+**[Slide 2]**
+A quick aside… throughout this course, when I'm talking generally about the  iTunes Connect, App Store Connect, the Apple App Store, and the other parts of Apple's vast App Ecosystem, I’ll often shorten that mouthful to the simpler terms like “The App Store Ecosystem”. I'll only do this when the specific part of this ecosystem isn't important to focus on, of course. If I’m referring to a specific component of this ecosystem, I’ll call out the specific element I'm referring to.
 # Introducing the Challenge
 Let’s dive into your first challenge:
-Working with iTunes Connect and the App Store is something we can easily overlook. But it’s so important that it’s worth taking a moment  to get a sense of how much of our development lives are spent working with Apple’s online tools. This is useful for its own sake. But as we’ll see throughout this course, Fastlane’s tools are built in direct response to the most common pain points we developers feel as we interact with them. So getting a handle on just how pervasive these tools are in our daily development lives is also invaluable to understand the power and relevance of fastlane itself.
-So. Your first challenge is nice and simple, but it’s also surprisingly deep. In a moment, I’ll ask you to pause the video and to make a list of all the ways you interact with the App Store ecosystem over the lifetime of your apps. There are some obvious things here I’m sure you’ll catch, but there are also a surprising number of subtler elements you might not think of at first. 
-Go ahead and pause the video now and draw up your list. When you’re done, resume the video and we’ll compare lists.
+**[Slide 3]**
+To Apple's credit, it's often as easy to overlook how much our apps depend on iTunes Connect and the App Store. At it's best, it's as easy to forget a lot of the ways we integrate with the App Store Ecosystem as it is to overlook the air we breathe.
+But in this course, we want to be very aware of how we depend on and interact with the App Store Ecosystem, especially because fastlane is designed expressly to make all these interactions much, much better for us. Said a bit differently, to appreciate what fastlane can really do for you, you need a clear understanding of what it's designed to fix.
+**[Challenge Slide]**
+So, your first challenge is nice and simple. In a moment, I’ll ask you to pause the video and to make a list of all the ways you interact with the App Store ecosystem over the lifetime of your apps. There are some obvious things here I’m sure you’ll catch, but there are also a surprising number of subtler elements you might not think of at first. 
+Go ahead and pause the video now and draw up your list. When you’re done, resume the video and we’ll compare lists. See you then…
 # Pause for Challenge
 # Challenge “Answers”
-> NOTE: I’ll be returning to this list and the accompanying slides as I build the course. I’d suggest waiting to tech edit this until this note is removed — Brian
+> NOTE for TE: I’ll be returning to this list and the accompanying slides as I build the course. I'll have either separate slides or bullet points to accompany each of these. For starters, can you please just review the basic style and concept here as much as makes sense? Thanks! — Brian
 Welcome back. Let’s take a look at how our lists compare…
 - Let’s start with the most obvious one: We all submit our apps to Apple for testing and approval, and you likely know firsthand that manually handling these steps can be surprisingly time-consuming, and maybe a wee bit painful at times.
 That’s it — nice and simple. This’ll be a real short course! I’m kidding of course. There’s much more here. Let’s move onto the less obvious things that require interaction with the App Store infrastructure:
@@ -24,8 +28,3 @@ There’s still quite a bit more we could call out, but that’s plenty for now.
 The great news is that fastlane was developed to ease exactly these points of pain. As you’ll soon see, each of fastlane’s tools fits a set of these tasks like a glove, and taken together, fastlane offers an ideal solution for deeply automating — and profoundly streamlining and goof-proofing — your entire relationship to the App Store ecosystem.
 # Up Next
 in the next section, we’ll begin our dive into fastlane by installing it on your mac. See you there…
-
-
-
-
-# Conclusion
