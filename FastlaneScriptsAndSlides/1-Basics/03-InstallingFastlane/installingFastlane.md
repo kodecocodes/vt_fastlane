@@ -44,6 +44,7 @@ brew install git
 # Interlude:
 **[Slide 4]**
 By the way, if you're new to git, I'd highly recommend our video course **Beginning Git** by Sam Davies. It's a great way to get quickly demystify and get up to speed with the basics of this indispensable tool.
+<!-- Should we add any Ruby checking here?-->
 # Demo: Installing fastlane
 We've gotten the preliminaries out of the way, and it's time to install fastlane itself. We'll use Homebrew once again to do this. Run the following command:
 ```bash
@@ -55,7 +56,8 @@ By the way, if you already had fastlane installed, now is a good time to make su
 fastlane update_fastlane
 ```
 # Interlude: Chew Chew Train
-That was a lot of work, but it gets all the preliminaries out of the way. Now it's time to briefly introduce our project. If you haven't already, install the Materials for this course and FINISH THIS, MAKING SURE IT ALIGNS WITH STANDARDS.
+That was a lot of work, but it gets all the preliminaries out of the way. Now it's time to briefly introduce our project. If you haven't already, install the Materials for this course and
+<!-- Finish preceding ¶ making sure it complies with RW standards -->
 Chew Chew Train is the app our friend Devon is developing. It's a warm-hearted — but maybe just slightly confused — app that takes a fresh spin on training. It's central premise is that every dog should get a nice treat every time you ask it to do anything, regardless of the result. We understand that a lot of fairly rotund and happy — but possibly not so well-trained — dogs really like its motto of "Always Be Chewing".
 # Demo: Initializing fastlane in our project
 We'll take a closer look at the app a bit later on. For now, make sure it's installed where you'd like, and navigate to the project's root directory in Terminal:
@@ -67,6 +69,7 @@ You've already installed fastlane on your mac; now it's time to initialize it fo
 fastlane init
 ```
 The initialization script analyzes your project and present you with a set options that let you choose standard configurations to start with. We'll choose 4-manual. Do this now, and hit `Enter` as you're prompted. 
+<!-- Self: Test all 4 options. It looks like choosing 4 bypasses entering our Apple ID. Decide if that's a good thing (to be deferred to maybe Episode 4) or if it's better to do that here. -->
 Great! Fastlane is now initialized for your project. Let's do a quick flyover of what it just did. Enter:
 ```bash
 ls -la
@@ -88,6 +91,10 @@ And, of course, rest assured this won't have any effects on your Xcode projects,
 # Conclusion
 Whew! We've covered quite a lot, but in the process, you've installed fastlane and integrated it into your project. 
 in the next episode, we'll meet fastlane's tool **cert** and see firsthand how this can help you manage your App Store Certificates. See you there…
+
+
+
+
 
 [1]:	https://fastlane.tools
 [2]:	https://docs.fastlane.tools

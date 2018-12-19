@@ -20,5 +20,6 @@ From Freebo’s perspective, “optimizing App Store interactions” isn’t som
 **[Slide 5]**
 Happily, Freebo discovers our course (well, ok, Devon discovers it while Freebo tries to chew her new iPad). This is the tool she needs, and she’s ready to dive in and put it to use.
 Throughout this course, we’ll revisit Devon and Freebo from time to see how switching to fastlane affects their lives. (Spoiler alert: there’ll be a lot of smiles and wagging tails in their near futures).
+<!-- If we want a teaser, this might not be a bad place for one. Possibly to show cert in action? -->
 ## Next
 Now that you’ve met Devon and Freebo, in the next episode we’ll take a closer look at some of the main challenges we all face as we interact with the App Store manually, without fastlane. See you there…
