@@ -1,7 +1,51 @@
 # Intro
-
-# Demo
-
-# Interlude
-
+In this section, you'll learn about the *lane*.
+Up to this point, you've met individual fastlane actions. They're impressive on their own. But like an isolated car just sitting on a showroom floor, each action is designed for the open road, and the lane is the crucial element that unlocks that open road. Let's dive right in:
+# Introducing the Lane
+**[Slide ]** Lanes
+In fastlane, the lane is the key that ties together and unlocks the true power of individual actions. Think of a lane as a string of any number of fastlane actions, complete with branching logic, decision-making, and other intelligent tools. Each lane can be customized to whatever task you'd like it to perform. And you're not limited to just one monolithic lane — you can create any number of task-specific lanes for your, customizing each to your project-specific needs and your heart's content.
+Lanes are defined in the **Fastfile** in the root directory of a Swift project. As mentioned in Episode 3, they are written in Ruby. But never fear: Their structure and syntax may differ from Swift, but it's quite clear, and I think in short order, you'll feel quite comfortable crafting your own lanes. Let's take a closer look:
+## A Lane's Anatomy
+**[Slide ]** A Sample Fastfile
+Here's a sample Fastfile. Out of the box, we can see that its Ruby code differs substantially from that of Swift. Most noticeably, Ruby is **not** a C-style language — no curly brackets or keywords like var, let, func here! 
+**[Slide ]** Platforms and Lanes
+But the structure here is immediately clear: You can see immediately that there's a block that runs when the platform is iOS, and that two lanes — named "first" and "second" — are defined here. Syntactically, "platform" and "lane" are Ruby methods (note that Ruby generally doesn't use parentheses in method calls, in keeping with its preferred clean, bracket-less approach). 
+**[Slide ]** Do Blocks
+In place of curly brackets, Ruby use do - end pairings to denote blocks. Coming from a C-style language, this can look strange, but it's a logical choice that's easy to understand.
+**[Slide ]** Symbols
+Ruby Symbols are interesting creatures, and maybe the thing likely to look most alien when first encountering Ruby. For our purposes, you can think of them as a combination of defined-in-place let constants and enum cases. You'll see these in fast files quite often, and in particular, whenever you're selecting a target platform for a set of lanes, and when you're defining a lane's name.
+**[Slide ]** Action Methods
+Within a given lane, you call fastlane actions in the order you want them to run. Each invocation of an action is another Ruby method call, and you're able to include whatever parameters an action's method supports to further tune its performance.
+**[Slide ]** Comments
+Last,  inline comments in Ruby are prefaced with a simple hash mark. Nice and simple!
+# Introducing the Challenge
+**[Challenge Slide ]**
+OK. Let's take a moment to put that to use. In a moment I'll ask you to pause the video and try your hand at creating your first lane. Your task will be simple and pragmatic: 
+Open the sample project's fastlane directory (it's in the root of the main project folder), and then open the Fastfile in a text editor (Ideally, use one that recognizes Ruby syntax. 
+Your challenge will be to:
+1. Remove the existing description and beta lane.
+2. Create a new "development" lane.
+3. Configure this lane to run first run **cert** and then **sigh**.
+For extra credit, I'd encourage you to also:
+1. Add a description just before your lane.
+2. Configure your sigh method to set its **force** property to **true**.
+OK. Please the video now and give that a try. See you when you're done…
+# Pause for Challenge
+# Demo: Challenge Answers
+How'd that go? Let's take a look at how to do this.
+- First, we remove the preexisting call to **desc** and the **lane** block.
+- Then we add a new **lane**, name it **:development** and define a do/end block.
+- Inside these, we simply call cert and then sigh. 
+- To handle the challenge items, we prepend a call to **desc** and pass it a string describing our lane's function
+- And then, we add a the force parameter and set it to true. (Note that we use parentheses in this case because of the presence of the parameter name).
+# Demo: Putting it to Use
+Now let's take your shiny new lane out for a spin!
+Open your Terminal app, and execute:
+`fastlane development`
+It's just that simple! With that one simple command, fastlane now takes care of a complex string of actions on your behalf:
+<!-- TODO: Spell these actions out, but briefly -->
 # Conclusion
+Congratulations! In our trek across fastlane's terrain, you've arrived at a first overlook point. You now know enough about fastlane to know you to explore and use individual actions directly in the command line, but much more importantly, you also know how the basics of how to string commands together to perform a larger meta task on your behalf. There are many higher overlook points ahead, but take a moment to relish this. 
+**[Slide ]** More Info
+We've of course just scratched the surface of what lanes can do. We'll be expanding our knowledge of lanes throughout the rest of this course. I'd also give a shout out to fastlane's Advanced Lanes Guide at docs.fastlane.tools/advanced/lanes/ as another great source of info. 
+Alright! I'll see you in the next episode…
