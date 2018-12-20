@@ -14,7 +14,7 @@ But in this course, we want to be very aware of how we depend on and interact wi
 So, your first challenge is nice and simple. In a moment, I’ll ask you to pause the video and to make a list of all the ways you interact with the App Store ecosystem over the lifetime of your apps. There are some obvious things here I’m sure you’ll catch, but there are also a surprising number of subtler elements you might not think of at first. 
 Go ahead and pause the video now and draw up your list. When you’re done, resume the video and we’ll compare lists. See you then…
 # Pause for Challenge
-# Challenge “Answers”
+# Challenge Answers
 > NOTE for TE: I’ll be returning to this list and the accompanying slides as I build the course. I'll have either separate slides or bullet points to accompany each of these. For starters, can you please just review the basic style and concept here as much as makes sense? Thanks! — Brian
 <!-- Self: Consider grounding this out in XCode Help [online's overview](https://help.apple.com/xcode/mac/10.1/#/dev3a05256b8). The skeleton overview might be a really nice way to both order all these items and give visual backup to each of the points called out here… -->
 Welcome back. Let’s take a look at how our lists compare…

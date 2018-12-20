@@ -4,6 +4,8 @@ Hey, what’s up everybody, this is Brian. Welcome to our course on fastlane for
 **[ Slide 1 ]**
 Fastlane is an amazing suite of tools built to automate and streamline the otherwise tedious and repetitive tasks iOS developers traditionally have had to perform manually on the Apple App Store. 
 In this course, you’ll discover how you can use fastlane in your and your team’s daily workflows. And you’ll  learn through exercises and challenges how fastlane can save you valuable time, avoid mountains of grunt work, and streamline many of the gnarliest aspects of iOS development. 
+<!-- Introduce fastlane better. 
+It's open source, MIT. -->
 We’ll dive into those details in a moment. But first, I’d like to introduce a couple of characters we’ll meet repeatedly throughout this course.
 ## The Characters
 **[Slide 2]**
