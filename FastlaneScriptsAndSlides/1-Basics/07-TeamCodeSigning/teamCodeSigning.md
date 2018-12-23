@@ -1,7 +1,40 @@
 # Intro
-
-# Demo
-
-# Interlude
-
+In the past three episodes, you've seen you fastlane can improve the standard iOS processes of managing Code signing, certificates and provisioning profiles. As you've seen, cert and sigh can greatly improve the workflows defined by the App Store ecosystem, and improve this predefined schema by deeply automating and streamlining them.
+As significant as the improvements you've seen so far are, the fastlane team has a much more ambitious plan to take all this to the next level. Fasten your seatbelts, because we're about to dive in as fastlane takes everything to the next level!
+# Lecture
+## The Trouble with Tribbles
+**[Slide ]** 
+Fastlane proposes a paradigm shift in how teams manage their certificates and profiles. This begins with the seemingly straightforward observation that the traditional workflows are developer- and device-centric. Think of everything we've done so far with cert and sigh: A single developer (and in many ways, a single developer machine) is really the atomic unit of everything in this world. Certificates and profiles are stored on an individual developer's machine, and core identities are tied once again to individual developers.
+**[Slide ]** Tribbles everywhere
+This works fine when you're a team of one. But what happens as your team grows? 
+As each new team member is brought on board, they each have their own development machines, iOS devices, and code signing identities. But shared assets like provisioning profiles need to be synced across developers, and every new machine brought into the team requires increasingly more time-consuming and finicky setup. Certificates and profiles proliferate like tribbles; they expire, become corrupted, or aren't correctly synced across all team devices, leaving team members without any code signing identities and causing significant managerial overhead. Each new machine a developer uses further multiples these issues. When team members leave, this adds still more work that's again multiplied for every team member. And maybe worst of all, every team member who can submit builds must have full access to the Apple Developer Portal, raising the possibility that a tired developer's error might inadvertently cause an entire team real headaches.
+**[Slide ]** Fritz collapsing under the weight of too many developers
+The fastlane team took a step back and identified a core issue common to all of these problems: The entire conventional workflow is designed with a single developer as its atomic unit. While this likely makes sense for managing assets like our individual iCloud movies, books and photos, it's not so clear that this is the best way to handle certificates and profiles when you're working with one or more teams, especially since — unlike with atomic assets like photos and music — the developer assets we've seen must be synced and managed by a team manager. 
+In a nutshell, the traditional individual-based approach to managing code signing assets isn't particularly well-suited to scaling up, and it's inherently brittle in a team context. 
+## Fastlane's Revolutionary Solution
+**[Slide ]** The Team!
+Fastlane's solution to this traditional situation is simple and profound. Why not make the center of this world the team itself, rather than the individual developer? What if a team — no matter how large or small — were able to share a single set of code signing identities, certificates, and profiles, and each member were able to simply obtain and apply them at will? Hmmm…
+That's a great idea, but there's a major hurdle to overcome: since Apple's own infrastructure is fundamentally oriented around individuals rather than teams, how and where would this be stored, and how would individual developers safely obtain these assets?
+**[Slide ]** Git
+To answer this, fastlane turned to the same tool that's solved this for team code and other assets: git. Git meets all these requirements: it's centralized, secure, repos can (and must in this case) be private, and of course, it excels as a central point for distributable team assets.
+To get our heads around this, let's see how this works in detail:
+**[Slide ]** 4 points
+1. A team manager creates a fresh, private Git repo.
+2. New private keys, profiles and certificates are created, encrypted (typically via OpenSSL) and stored in the repo. 
+3. Each team member imports the certificates and private keys to their Keychain, and the provisioning profiles are copied to their Libraries.
+4. Each member configures their team Xcode projects to use these assets and turns off Xcode's automatic provisioning profile management on these projects .
+## Really?
+**[Slide ]** Devon and Fritz ruminating
+If you're encountering this idea for the first time, it's natural to have lots of questions about whether it's really workable, and even more, if it's truly secure enough to be trusted with something as mission-critical as your team's core code-signing assets. We'll answer the practicality questions in the next episode when we introduce fastlane's dedicated action for this, called match. For now, let's focus on whether or not this schema is truly safe and secure.
+Fastlane does a nice job of clarifying the reasons it believes this approach is worthy of trust and also of exposing the details of a worst-case scenario where something went horribly wrong. I'll distill their key points like this:
+**[Slide ]** 
+1. If you follow fastlane's recommendations, the git repo storing your critical assets is private, and additionally, all assets are OpenSSL-encrypted with a passphrase.   
+	My own take: We rely on these tools daily to keep our critical code and virtually all other team assets safe, so it's likely not a significant leap to further trust them with our code signing assets. Further, there's already non-trivial risk that a team member's machine could be compromised in the traditional scenario. For my money, at least, I consider relying on Git and OpenSSL justified and reasonable, so long as we use the same due diligence we must always use in our online lives.
+2. But what if the absolute worst happened, and somebody stole a private key? Well, the attacker could use your certificate and provisioning profile to code sign your app. However, the thief would have to first get access to your code (stored in a completely separate repo). And the only way to get an app code-signed by Apple is to submit it for review, and to do this they'd also need your App Store Connect credentials, and these aren't stored in this git repo either. Similar safeties hold true for concerns that the bad guys could install a signed application on a small subset of iOS devices, where once again, they'd need access to additional assets not stored in this repo.  
+	Ultimately, the worst case scenario is for enterprise profiles, where an in-house profile could potentially be used to distribute a signed application with the company's name. This isn't a trivial risk if you use enterprise profiles, but even here, the enterprise certificate could be easily revoked, remotely breaking the illicit app on all devices.
+3. As a final precaution, fastlane advises using the best practice of enabling 2 factor authentication with your git provider for every team member. This provides a final layer of security, and is, of course, equally advisable for all your online git repos. 
+## The Verdict
+**[Slide ]** 
+There's no question that there's non-trivial risk involved in *any* method of handling code signing and other interactions with the App Store ecosystem, be that manual or other. For that matter, there's non-trivial risk in everything we do that's in any way exposed to the online world. Here, as everywhere else, each development team must decide for itself what tradeoffs between security, convenience, and efficiencies. Personally, my own sense is that — provided that one follows fastlane's basic recommendations — this schema provides a great deal of benefit for what I see as a very small and manageable tradeoff in security exposure. 
 # Conclusion
+In the next episode, we'll meet *match*, fastlane's action dedicated to managing team-centered code signing. See you there!
