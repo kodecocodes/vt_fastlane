@@ -1,61 +1,72 @@
 # Intro
-In this episode, we'll meet **match**, fastlane's action dedicated specifically to managing its revolutionary team-based approach to App Store asset management. You'll also meet its helper action **register-devices**, and see how both these tools integrate directly into fastlane lanes. Let's take a closer look…
-# Lecture: Introducing Match
+In this episode, we'll meet **match**, the fastlane action for managing team-based certificates and profiles.
+# Lecture
+## Introducing Match
 **[Slide ]** Match documentation
-Like other fastlane actions, match has a dedicated documentation page at **docs.fastlane.tools/actions/match**. Note that under the hood, match is an alias for the **sync_code_signing** action. You'll meet this again later in this episode.
+Like other fastlane actions, match has a dedicated documentation page at **docs.fastlane.tools/actions/match**.
 **[Slide ]** Match points :]
-match sets a high bar for itself, and among other things, promises to enable you to:
-- Auto sync all team member keys and profiles via git.
-- Handle all the heavy lifting of creating, storing, and retrieving your certificates and profiles.
-- Support apps with multiple targets / bundle ID's.
-- Support apps with multiple targets / bundle ID's.
-- Support multiple Apple accounts and teams.
-- Let you set up code signing on a new machine in under a minute.
-- And lots more. 
-That's a tall order. Let's give match a spin and see how it, well, matches up to its promises…
-# Setting up match
-## Demo: Setting up a Private Git Repository
-The first thing we need to use match is a **private** git repository dedicated solely to storing certificates. Again, I'll emphasize: This must be **private**, or life as we know it will end. 
-At the time of this writing, **GitHub** doesn't offer private repositories for free accounts, but other well-regarded git resources like **GitLab** (gitlab.com) and **BitBucket** (bitbucket.org) do.  I'll create a private repository at gitlab, and I'll name it "**team-certificates**", like so:
-I've previously created a free gitlab account, logged in to it, and added my private SSH public key. 
-I create a new blank *project* (gitlab's name for a git repo) make sure it's Private, and choose "Create Project".  Great! That's set to go.
-## Interlude: Dedicated account
+**match** is designed to handle all the heavy lifting of creating, encrypting, and securely storing a team's certificates and profiles in a single git repository, and then again to retrieve, decrypt, and utilize these on individual developer's machines. It also provides many advanced tools for clearing clutter, easily adding new team devices, supporting apps with multiple targets as well as multiple Apple accounts and teams. A good measure of its ambition is its pledge that a team can set up code signing on a new machine in under a minute!
+That's a tall order. Let's give match a spin and see how it, well, matches up to its goals…
+## Setting up a Private Git Repository
+Before using match, we  need a **private** git repository dedicated solely to storing certificates. Again, I'll emphasize: This must be **private* — or life as we know it will end. 
+At the time of this writing, **GitHub** doesn't offer private repositories for free accounts, but other well-regarded git resources like **GitLab** (gitlab.com) and **BitBucket** (bitbucket.org) do.  I'll use a create a private repository named **team-certificates** that I created earlier gitlab here.
 **[Slide ]** Optional Dev Account
-Fastlane suggests that you might want to add a special shared Apple Developer Portal account and dedicate this exclusively to shared team assets and the match workflow. 
-This isn't required, but the advantage is that it gives you a clean account dedicated solely to your team code signing assets. You might name this account something like "**share@mygroup.com**", and each team member would simply reference this account whenever they run match. 
-If you choose not to do this, you'll need to select an existing team member's account as the one you'll use with match, and just make sure all team members remember to use this account for all their match actions. 
-To demo, I'll just use my own personal account for simplicity.
-## Demo: Initializing Match
-With our private repo in place, we can put match to work in the command line. 
-I'll start by opening my Terminal app and navigating to our sample project folder. Then I'll run
-`fastlane match init`
-This will initialize match for our projectI'm prompted to enter the URL of my private git repo, and once I do, the process quickly completes and I get a helpful message about the new Matchfile the process has created in the project fastfile subdirectory. 
-I'll open this up in my code editor and take a quick look. You can see that the file is initialized with the url of our new private repo, and that the default type of match is set to development. We'll return to this file in a moment.
-## Demo: Removing the Clutter
-Fastlane recommends that you start with a clean set of certificates and profiles. Since I'm reusing my existing account, I'll begin by nuking my preexisting development certificates and profiles:
-`fastlane match nuke development`
-This both removes all my preexisting certificates from the App Store environment. (As a sidetone, I could also clear out other types of accounts, but since we're focusing on development in this section, I'll just clear out these.)  
-Doing this also creates a helpful README file with useful instructions for onboarding additional team members. 
-## Demo: Recreating Development Certs and Profiles
-Now let's recreate clean certificates with match:
-`fastlane match development
-`I'm prompted to add my app bundle identifier, and then a passphrase for encryption. Match will use this to automatically encrypt all certificates and profiles stored in this repo. Take this as seriously as you would any mission-critical password: make it robust and make sure you can't lose it. I'll use 1Password to generate a strong passphrase and also to store it securely.
-…
-Match finishes and gives us its typical clean and informative summary. Let's take a look in our private repo…
-As you can see, match has added a new development certificate, a development provisioning profile, and a private key.
-<!-- Self: confirm and see if this can be improved, once git issues are resolved. -->
-Take a moment to consider how much fastlane has just done: With a single command, it's created a full set of development code signing assets — complete with certificate, private key, and provisioning profile. But even more impressive, all this is automatically encrypted and integrated directly into git. 
-## And… Much more
-With everything we've covered in this episode, we've only brushed the surface of match's potential. You can find a lot more information about match's additional powers on its documentation site. Here's a sampling of some of its further capabilities:
-<!-- Self: Complete this -->
-- Multiple Target Handling
-- Adding Devices
-- Adding Team Members
-- Changing Password
-- Running in Read-only mode
-## Lecture: Integrating with Lanes
-<!-- Self: Complete this
-Call out text file for devices, more…
- -->
+Fastlane suggests you might want to add a new Apple Developer Portal account and dedicate this to match team assets. This dedicated account — perhaps named something like **team@myorg.com** — avoids mixing personal and team-based assets in the same bucket. I'd recommend this as a best practice.
+# Demo
+## Initializing Match
+With our setup done, we can try out match in the command line. I'll begin by navigating to our project folder and runing:
+```bash
+fastlane match init
+```
+I'm prompted to enter the URL of my private git repo and the process completes with a helpful summary.
+This creates a new **Matchfile** containing match's configuration settings. It's initially populated with our repo's URL,  and its default type is set to development and can be further customized.
+## Removing the Clutter
+Now let's put match to use. If you're reusing an existing account, you should start by cleaning out your preexisting certificates and profiles:
+```bash
+fastlane match nuke development
+```
+I can also replace `development` with `distribution` or `enterprise` to clear out any lingering assets of these types
+## Creating Team Dev Certs and Profiles
+Now I'll create a new set of development assets, encrypt them, and upload them to our git repo. All this takes is:
+```bash
+fastlane match development
+```
+Match prompts me to input my app bundle identifier, then a passphrase for encryption. The passphrase is used to automatically encrypt all certificates and profiles stored in this repo. Take this as seriously as you would any mission-critical password: make it robust and unique, and make sure you can't lose it. I'll use 1Password to generate a strong passphrase and store it securely.
+Match finishes and offers a a helpful summary. Let's view the results in our private repo…
+With that single command, match has created a full set of team development code signing assets. All certificates with their private keys live in a `certs` folder, and all profiles live in the `profiles` folder, all encrypted by OpenSSL. **match** also adds a README with helpful onboarding instructions for other team members. Pretty amazing!
+## Applying Team Assets
+Now that my team-wide dev assets are in my git repo, each team member will need to deploy these to their macs, so we're all using the identical credentials. Each developer runs:
+```bash
+fastlane match development
+```
+As you'd expect, this downloads and decrypts all the assets directly to their macs, storing them in their Keychains and file system as needed. As advertised, match really makes this easy and fast!
+## Wrapping up Match's Capabilties
+Match can do much more. It handles multiple targets, makes adding and removing devices a snap,  creates custom entitlements, deeply simplifies multi-team development, and a lot more.
+# Lecture: Integrating with Lanes
+Naturally, match integrates into lanes, so that you can automatically fetch your team's code signing certificates as part of any fastlane workflow.
+**[Slide ]** Match actions in a lane 
+```ruby
+lane :myLane do
+	# ...
+
+	# register team devices
+	# run match
+
+	# ...
+end
+```
+You typically do this via 2 actions:
+First, you invoke the `register_devices` action:
+```ruby
+register_devices(devices_file: "./devices.txt")
+```
+**[Slide ]** Devices\_file\_example_ where the `devices_file` is a `csv` file listing your team's devices.
+Then, you invoke `match` itself, along with any options:
+```ruby
+match(type: "development", <options>)
+```
+In addition to "development", you can use "appstore", "adhoc" and "enterprise"
+You can add the option `force_for_new_devices`to automatically regenerates your provisioning profile if your team's device count has changed. Or you can simply use the `force` option, causing the profile to be regenerated whenever the lane is run.
+As you saw in the command line, the simplicity of this API really hides how much match does for you under the hood.
 # Conclusion
-<!-- Self: Complete This -->
+Match delivers on fastlane's vision of making it easy to use a team-based approach to code signing. In the next episode, you'll get hands-on experience with match, as you create a new lane just for match actions. See you there!
