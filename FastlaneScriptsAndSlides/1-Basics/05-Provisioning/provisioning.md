@@ -49,15 +49,25 @@ Before we dive into Terminal, let's take a moment to review sigh's summary of wh
 Running sigh is so simple, it almost seems impossible. Simply navigate to your project's root directory and execute
 `fastlane sigh`
 …and sigh will analyze and report back on the state of your current project. This is deceptively simple. With this one command, sigh logs onto the Developer portal and gets the App ID matching your project's App ID (alerting you if it doesn't find one) and ……………
+Note that since we haven't yet registered our App in the Developer Portal, sigh can't proceed yet. You'll tackle this yourself as part of the next episode's challenge.
 Fastlane actions are consistent, so as you saw in the previous episode with cert, you can learn how to tune what sigh does via
 `fastlane action sigh`
 … and as you can see, if you'd like to create any one of the four specific types of provisioning profiles we've reviewed, you can do that, and much more. Also as you saw with cert you can get more information by running
 `fastland sigh --help`
 This provides some particularly helpful options. I'd like to see all my profiles, so I'll type
 `fastland sigh manage`
-Et voila! I get a very handy listing of all my valid, expired, and soon-to-expire profiles. If I want to repair profiles, I can say
-`fastlane sigh repair`
-… and much more.
+Et voila! I get a very handy listing of all my valid, expired, and soon-to-expire profiles. If I want to clear my expired profiles, I can add `-e`
+`fastlane sigh manage -e`
+We can also repair and resign profiles just as easily.
+<!-- 
+
+Need how everything's now in the project folder in Finder.
+
+**Should I use the form fastlane sigh -o "~/Certificates/" to keep things neater?**
+
+
+ -->
+
 # Summary
 OK. Let's wrap up. In the past two episodes, you've met cert and sigh, and have gotten a small taste of how fastlane can automate and manage handling your Certificates and Profiles for you. 
 But, if you had to do this by entering rote commands into your Terminal as we've done so far, that probably wouldn't be much better than what you've been doing up til now. In the next episode, you'll create your first fastlane "lane", which will give you a taste of how fastlane actions can be combined to perform complex actions on your behalf with just a single custom command. See you there…

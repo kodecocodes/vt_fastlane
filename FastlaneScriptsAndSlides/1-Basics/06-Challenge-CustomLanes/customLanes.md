@@ -23,10 +23,20 @@ Last,  inline comments in Ruby are prefaced with a simple hash mark. Nice and si
 OK. Let's take a moment to put that to use. In a moment I'll ask you to pause the video and try your hand at creating your first lane. Your task will be simple and pragmatic: 
 Open the sample project's fastlane directory (it's in the root of the main project folder), and then open the Fastfile in a text editor (Ideally, use one that recognizes Ruby syntax. 
 Your challenge will be to:
-1. Remove the existing description and beta lane.
+1. Register your app in the Apple Developer Portal
+2. Remove the existing description and `custom_development` lane.
 2. Create a new "development" lane.
 3. Configure this lane to run first run **cert** and then **sigh**.
 For extra credit, I'd encourage you to also:
+<!-- 
+
+A better advanced challenge might be to add params to the AppFile so we're not prompted for this info every time.
+
+
+	We haven't discussed this yet, but point out where it is, and ask peeps to:
+Add app_identifier, apple_id, and team_id.
+
+ -->
 1. Add a description just before your lane.
 2. Configure your sigh method to set its **force** property to **true**.
 OK. Please the video now and give that a try. See you when you're done…
@@ -44,8 +54,21 @@ Open your Terminal app, and execute:
 `fastlane development`
 It's just that simple! With that one simple command, fastlane now takes care of a complex string of actions on your behalf:
 <!-- TODO: Spell these actions out, but briefly -->
+
+
+\<!-- 
+
+
+Refer to [https://docs.fastlane.tools/actions/][1] for more info...
+
+
+ --\>
+
+
 # Conclusion
 Congratulations! In our trek across fastlane's terrain, you've arrived at a first overlook point. You now know enough about fastlane to know you to explore and use individual actions directly in the command line, but much more importantly, you also know how the basics of how to string commands together to perform a larger meta task on your behalf. There are many higher overlook points ahead, but take a moment to relish this. 
 **[Slide ]** More Info
 We've of course just scratched the surface of what lanes can do. We'll be expanding our knowledge of lanes throughout the rest of this course. I'd also give a shout out to fastlane's Advanced Lanes Guide at docs.fastlane.tools/advanced/lanes/ as another great source of info. 
 Alright! I'll see you in the next episode…
+
+[1]:	https://docs.fastlane.tools/actions/

@@ -8,13 +8,13 @@ Like other fastlane actions, match has a dedicated documentation page at **docs.
 **match** is designed to handle all the heavy lifting of creating, encrypting, and securely storing a team's certificates and profiles in a single git repository, and then again to retrieve, decrypt, and utilize these on individual developer's machines. It also provides many advanced tools for clearing clutter, easily adding new team devices, supporting apps with multiple targets as well as multiple Apple accounts and teams. A good measure of its ambition is its pledge that a team can set up code signing on a new machine in under a minute!
 That's a tall order. Let's give match a spin and see how it, well, matches up to its goals…
 ## Setting up a Private Git Repository
-Before using match, we  need a **private** git repository dedicated solely to storing certificates. Again, I'll emphasize: This must be **private* — or life as we know it will end. 
+Before using match, we  need a **private** git repository dedicated solely to storing certificates. Again, I'll emphasize: This must be \**private* — or life as we know it will end. 
 At the time of this writing, **GitHub** doesn't offer private repositories for free accounts, but other well-regarded git resources like **GitLab** (gitlab.com) and **BitBucket** (bitbucket.org) do.  I'll use a create a private repository named **team-certificates** that I created earlier gitlab here.
 **[Slide ]** Optional Dev Account
 Fastlane suggests you might want to add a new Apple Developer Portal account and dedicate this to match team assets. This dedicated account — perhaps named something like **team@myorg.com** — avoids mixing personal and team-based assets in the same bucket. I'd recommend this as a best practice.
 # Demo
 ## Initializing Match
-With our setup done, we can try out match in the command line. I'll begin by navigating to our project folder and runing:
+With our private repo set up, we can try out match in the command line. I'll begin by navigating to our project folder and runing:
 ```bash
 fastlane match init
 ```
@@ -40,7 +40,7 @@ Now that my team-wide dev assets are in my git repo, each team member will need 
 fastlane match development
 ```
 As you'd expect, this downloads and decrypts all the assets directly to their macs, storing them in their Keychains and file system as needed. As advertised, match really makes this easy and fast!
-## Wrapping up Match's Capabilties
+## Wrapping up Match's Capabilities
 Match can do much more. It handles multiple targets, makes adding and removing devices a snap,  creates custom entitlements, deeply simplifies multi-team development, and a lot more.
 # Lecture: Integrating with Lanes
 Naturally, match integrates into lanes, so that you can automatically fetch your team's code signing certificates as part of any fastlane workflow.
@@ -49,8 +49,8 @@ Naturally, match integrates into lanes, so that you can automatically fetch your
 lane :myLane do
 	# ...
 
-	# register team devices
-	# run match
+	register_devices( <options> )
+	match( <options> ) 
 
 	# ...
 end
@@ -60,7 +60,7 @@ First, you invoke the `register_devices` action:
 ```ruby
 register_devices(devices_file: "./devices.txt")
 ```
-**[Slide ]** Devices\_file\_example_ where the `devices_file` is a `csv` file listing your team's devices.
+**[Slide ]** Devices\_file\_example\_ where the `devices_file` is a `tab-separated` file listing your team's devices.
 Then, you invoke `match` itself, along with any options:
 ```ruby
 match(type: "development", <options>)

@@ -28,12 +28,9 @@ Possibly install and demo ProvisionQL here to better demonstrate Certificates
 It's time to meet the first of fastlane's tools you'll be using, and it's called **cert**. Cert's is one of fastlane's many **actions**. Like all actions, cert can be run a la carte in the command line, and that's what we'll do here as we're getting started. As you'll see over the next few episodes, what we do here will just expose the tip of the iceberg; the real power of fastlane's actions comes when you bundle them together to combine their power. You'll be doing that soon…
 Fastlane's document of cert shows us the basic form of command line usage, along with some of its options. It also points us to how to get more live information within the command line about further things we can do with it. 
 Alright, let's fire it up! 
-Open your Terminal app, and navigate to your sample project's directory.  Execute 
-`fastlane cert`
-Whoa! A whole lot just happened, and… fast. Let's unpack this. To get a better look at what's happening, let's run
-`fastlane cert --verbose`
-<!-- Self: Improve the following, matching to verbose output and ensuring these are in the right order and complete -->
-First, cert gets your Apple ID and password, prompting you for them if it doesn't yet have them.
+Open your Terminal app, and navigate to your sample project's directory.  Execute cert like so:
+`fastlane cert
+`First, cert gets your Apple ID and password, prompting you for them if it doesn't yet have them.
 It then logged onto the Apple Developer portal to verify these. 
 Next, it looked for a valid development certificate on your mac. If it didn't find one, it created a new request and retrieved and stored the new public/private pair in your keychain, also verifying that the certificate was correctly installed locally.
 Finally, it installed that certificate for your current project.
@@ -51,6 +48,6 @@ That wraps up this episode. We've dipped our toes just a little into the fastlan
 In the next episode, we'll meet a second fastlane tool and learn how it can help tame the wild jungle of  iOS Provisioning Profiles. See you there!
 
 
-<!--  Introduce Code Signing as a concept here too? That'd also mean introducing the Bundle ID --> 
+<!--  Introduce Code Signing as a concept here too? That'd also mean introducing the Bundle ID -->
 
 [image-1]:	https://developer.apple.com/library/archive/documentation/Security/Conceptual/cryptoservices/Art/certificate_anatomy_2x.png

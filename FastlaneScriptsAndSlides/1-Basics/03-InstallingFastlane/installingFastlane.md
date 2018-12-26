@@ -89,7 +89,7 @@ The answer is that although fastlane has rolled out a set of beta Swift tools, f
 So, we'll use Ruby throughout this course. The good news is that this honestly isn't that big a deal. We'll use Ruby to write and customize our fastlane actions, and we'll do this in Terminal. Ruby's syntax isn't C-based like Swift's and Objective C's, but it's modern, expressive, and well suited to a scripting language. Whenever we encounter Ruby syntax you haven't explain, we'll briefly explain
 And, of course, rest assured this won't have any effects on your Xcode projects, which will remain purely Swifty. 
 # Conclusion
-Whew! We've covered quite a lot, but in the process, you've installed fastlane and integrated it into your project. 
+We've covered quite a lot, but in the process, you've installed fastlane and integrated it into your project. 
 in the next episode, we'll meet fastlane's tool **cert** and see firsthand how this can help you manage your App Store Certificates. See you there…
 
 
