@@ -42,38 +42,70 @@ platform :ios do
     )
   end
 
-  lane :sync_for_development do
+  lane :sync_all_development do
     sync_app_info
     sync_device_info
     match(type: "development")
   end
 
-  lane :sync_for_adhoc do
+  lane :sync_all_adhoc do
     sync_app_info
     sync_device_info
     match(type: "adhoc")
   end
 
-  lane :sync_for_appstore do
+  lane :sync_all_appstore do
     sync_app_info
     sync_device_info
     match(type: "appstore")
   end
 
   lane :export_adhoc do
-    sync_for_adhoc
+    sync_all_adhoc
+    increment_build_number
     gym(
       output_directory: "Export_AdHoc",
       export_method: "ad-hoc"
     )
   end
 
-  lane :export_itunes_connect do
-    sync_for_appstore
+
+
+  # I need to add external testers somewhere in here...
+
+  lane :export_for_itunes_connect do
+    sync_all_appstore
+    increment_build_number
     gym(
       output_directory: "Export_iTunesConnect",
       export_method: "app-store"
     )
   end
 
+  lane :distribute_to_itunes_connect do
+    export_for_itunes_connect
+    pilot(
+      team_name: "Brian Schick",
+      ipa: "./Export_iTunesConnect/ChewChewTrain.ipa",
+      changelog: "Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end 
+
+  lane :distribute_to_installr do
+    export_adhoc
+    installr(
+      api_token: "",
+      notes: "Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+
+  lane :distribute_to_tryouts do
+    export_adhoc
+    tryouts(
+      api_token: "",
+      app_id: "",
+      notes: "Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+  
 end
