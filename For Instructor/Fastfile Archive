@@ -107,5 +107,9 @@ platform :ios do
       notes: "Build {lane_context[SharedValues::BUILD_NUMBER]}"
     )
   end
+
+  lane :check_metadata do
+    precheck
+  end
   
 end
