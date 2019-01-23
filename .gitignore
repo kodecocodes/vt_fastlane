@@ -1,3 +1,5 @@
 .Ulysses-Group.plist
-/ChewChewTrain_dupe
-/ChewChewTrain/ChewChewTrain.xcodeproj/project.xcworkspace/xcuserdata/brian.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
+*.ipa
+*.zip
+*.html
