@@ -1,0 +1,7 @@
+app_identifier "com.razeware.ChewChewTrain"
+apple_id "bschick1@mac.com"
+team_name "Brian Schick"
+# ite_team_name "Brian Schick"
+
+
+# https://docs.fastlane.tools/advanced/#appfile

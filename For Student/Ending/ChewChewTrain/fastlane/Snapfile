@@ -1,0 +1,16 @@
+devices([
+"iPhone 8 Plus", 
+"iPhone SE", 
+"iPhone XS", 
+"iPhone XS Max"
+])
+
+languages([
+  "en-US",
+  "de-DE",
+])
+
+scheme "FastlaneSnapshots" 
+skip_open_summary true
+erase_simulator true
+clear_previous_screenshots true

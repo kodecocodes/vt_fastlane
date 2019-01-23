@@ -1,0 +1,305 @@
+
+default_platform(:ios)
+
+slack_hook = "https://hooks.slack.com/services/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"
+
+
+before_all do
+  update_fastlane
+  ensure_bundle_exec
+end
+
+platform :ios do
+
+  # desc "Ensure valid individual code signing assets for project, using person-based schema"
+  # lane :solo_development do
+  #   cert
+  #   sigh
+  # end
+
+  # lane :team_development do
+  #   register_devices(
+  #     devices: {
+  #       "brian excess" => "00008020-001C491C0268002E",
+  #       "Pro 120" => "f25bd75b4b3d643c749902dce888ae83c1f1f4ad"
+  #     }
+  #   )
+  #   match(type: "development")
+  # end
+
+    # lane :check_metadata do
+    # precheck(team_name: "Brian Schick")
+  # end
+
+  lane :frame_test do
+    sh "fastlane frameit download_frames"
+    frameit(gold: true, rose_gold: true, path: "./fastlane/screenshots")
+  end 
+
+  desc "Ensure app is registered with App Store Connect"
+  lane :sync_app_info do
+    produce(
+      username: "bschick1@mac.com",
+      app_identifier: "com.razeware.ChewChewTrain",
+      app_name: "Chew Chew Train",
+      team_name: "Brian Schick",
+      itc_team_name: "Brian Schick",
+      language: "English",
+      app_version: "1.0"
+    )
+  end
+
+  # desc "Update iOS UDID's on Developer Portal"
+  lane :sync_device_info do
+    register_devices(
+      devices_file: "fastlane/Devicefile"
+      # devices: {
+      #   "brin excess" => "00008020-001C491C0268002E",
+      #   "Pro 120" => "f25bd75b4b3d643c749902dce888ae83c1f1f4ad"
+      # }
+    )
+  end
+
+  desc "Sync team Development assets"
+  lane :sync_all_development do
+    sync_app_info
+    sync_device_info
+    match(type: "development")
+  end
+  
+  lane :sync_all_adhoc do
+    sync_app_info
+    sync_device_info
+    match(type: "adhoc")
+  end
+
+  lane :sync_all_appstore do
+    sync_app_info
+    sync_device_info
+    match(type: "appstore")
+  end
+
+
+  # # this was export
+  # lane :build_adhoc do
+  #   scan
+  #   sync_all_adhoc
+  #   increment_build_number
+  #   gym(
+  #     scheme: "ChewChewTrain",
+  #     output_directory: "build_AdHoc",
+  #     export_method: "ad-hoc"
+  #   )
+  # end
+
+  # lane :build_appstore do
+  #   scan
+  #   sync_all_appstore
+  #   increment_build_number
+  #   gym(
+  #     scheme: "ChewChewTrain",
+  #     output_directory: "build_AppStore",
+  #     export_method: "app-store"
+  #   )
+  # end
+
+
+  ###########
+
+  desc "Sync Team Code-Signing Assets"
+  lane :sync_signing_assets do |options|
+    selectedType = options[:type]
+    # selectedType = options[:type].gsub(/[^a-z]/, '')
+    match(type: selectedType, keychain_password: "MiniM000")
+  end
+
+  desc "Build for App Store submission"
+  lane :build_appstore do
+    sync_signing_assets(type: "appstore")
+    increment_build_number
+    gym(
+      output_directory: "build_AppStore",
+      export_method: "app-store"
+    )
+  end
+
+  desc "Build for Ad Hoc submission"
+  lane :build_adhoc do
+    sync_signing_assets(type: "adhoc")
+    gym(
+      output_directory: "build_AdHoc",
+      export_method: "ad-hoc"
+    )
+  end
+
+  ##############
+
+  lane :distribute_to_appstore do
+    build_appstore
+    pilot(
+      team_name: "Brian Schick",
+      changelog: "Version {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end 
+
+  lane :distribute_to_installr do
+    build_adhoc
+    installr(
+      api_token: "",
+      notes: "Version {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+
+  lane :distribute_to_tryouts do
+    build_adhoc
+    tryouts(
+      api_token: "",
+      app_id: "",
+      notes: "Version {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+  
+  lane :release do
+    # precheck
+    # build_appstore
+    snapshot
+    frameit(white: true)
+    deliver(
+    #   ipa: "./build_AppStore/ChewChewTrain.ipa",
+    #   run_precheck_before_submit: false,
+      force: true,
+      team_name: "Brian Schick"
+      )
+  end
+
+
+
+################################
+
+  # lane :distribute_to_appstore__git do
+  #   build_appstore
+  #   changelog = changelog_from_git_commits(pretty: `%h %s`)
+  #   pilot(
+  #     team_name: "Brian Schick",
+  #     ipa: "./build_AppStore/ChewChewTrain.ipa",
+  #     changelog: changelog
+  #   )
+  # end 
+
+  lane :build_appstore__git do
+    sync_all_appstore
+    ensure_git_status_clean
+    ensure_bit_branch(branch: "staging")
+    git_pull
+    scan
+    lint
+    increment_build_number
+    gym(
+      scheme: "ChewChewTrain",
+      output_directory: "build_AppStore",
+      export_method: "app-store"
+    )
+    commit_version_bump(
+      force: true,
+      message: "Version bumped by fastlane"
+    )
+    add_git_tag(grouping: "fastlane")
+    push_to_git_remote
+    document
+
+    v = lane_context[SharedValues::VERSION_NUMBER]
+    b = lane_context[SharedValues::BUILD_NUMBER]
+    d = sh "date -u"
+    slack(
+      payload: {"FASTLANE PRODUCTION — #{v}(#{b})" => d},
+      slack_url: slack_hook
+    )
+  end
+
+  lane :lint do
+    swiftlint(
+      mode: :autocorrect,
+      config_file: ".swiftlint.yml",
+      output_file: "./html/swiftlintResult.txt"
+    )
+  end
+
+  lane :document do
+    jazzy config: "./fastlane/jazzy.yaml"
+    sh "open ../Documentation/index.html"
+  end
+
+  lane :register_app do
+    produce(
+      username: "bschick1@mac.com",
+      app_identifier: "com.razeware.ChewChewTrain",
+      app_name: "Chew Chew Train",
+      team_name: "Brian Schick",
+      itc_team_name: "Brian Schick"
+    )
+  end
+  
+  lane :get_dev_certs do
+    cert development: true
+    sigh development: true
+  end 
+
+  lane :ping_slack do
+    v = lane_context[SharedValues::VERSION_NUMBER]
+    b = lane_context[SharedValues::BUILD_NUMBER]
+    d = sh "date -u"
+
+    slack(
+      payload: {"FASTLANE PRODUCTION — #{v}(#{b})" => d},
+      slack_url: slack_hook
+    )
+  end
+
+  lane :sl do
+    send_slack(
+      message: "Halloo from some lane"
+    )
+  end
+
+
+  private_lane :send_slack do |options|
+    msg = options[:message] || ""
+    ver = options[:version] || ""
+    bld = options[:build]   || ""
+    pay = options[:payload] || {}
+    suc = options[:success] != false
+    dat = sh "date -u"
+
+    if bld.empty?
+      slack(
+        message: msg,
+        payload: pay,
+        default_payloads: [],
+        success: suc,
+        slack_url: slack_hook
+      )
+    elsif pay.empty? && suc
+      slack(
+        payload: {"FASTLANE PRODUCTION — #{ver}(#{bld})" => dat},
+        slack_url: slack_hook
+      )
+    else
+      slack(
+        message: msg,
+        payload: pay,
+        success: suc,
+        slack_url: slack_hook
+      )
+    end
+  end
+
+  lane :ike do
+    appicon(
+      appicon_devices: [:iphone, :ipad, :ios_marketing],
+      appicon_path: "ChewChewTrain/Assets.xcassets"
+    )
+  end
+
+
+
+end

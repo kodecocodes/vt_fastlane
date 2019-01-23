@@ -1,0 +1,7 @@
+version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
+options: "1a6f8e23a7c8fc3ebc6d7be37aaadabd"
+build_time: [1547770097, 999970000]
+inputs:
+  "/Users/brian/OneDrive/WenderlichWork/Fastlane/ChewChewTrain_dupe/ChewChewTrain/TrainingViewController.swift": [9223372036, 854775807]
+  "/Users/brian/OneDrive/WenderlichWork/Fastlane/ChewChewTrain_dupe/ChewChewTrain/AppDelegate.swift": [9223372036, 854775807]
+  "/Users/brian/OneDrive/WenderlichWork/Fastlane/ChewChewTrain_dupe/ChewChewTrain/TrainingModel.swift": [9223372036, 854775807]
