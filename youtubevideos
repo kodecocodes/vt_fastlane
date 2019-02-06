@@ -1,9 +1,149 @@
-Youtube/Free videos
+# Youtube/Free videos: https://www.raywenderlich.com/tutorial-team/youtube-video-creation-guide-version-1-0
+---
 
-Directions: https://www.raywenderlich.com/tutorial-team/youtube-video-creation-guide-version-1-0
+## SELECTED EPISODES ##
 
-Part # Video #: Video Title
+Part 1 Video 3: About Fastlane
+Part 1 Video 5: Registration
+Part 1 Video 8: Provisioning
+
+Part 2 Video 2: Team Code Signing
+Part 2 Video 3: Match
+Part 2 Video 5: Lane Tips
+
+Part 3 Video 2: Build and Package
+Part 3 Video 4: Pilot
+Part 3 Video 5: Other Testing Options 
+
+Part 4 Video 2: Metadata
+Part 4 Video 5: Snapshot
+Part 4 Video 8: Deliver
+
+Part 5 Video 2: Git
+Part 5 Video 3: Unit Tests
+Part 5 Video 6: Slack Notifications
+
+
+## CONTENT ADJUSTMENTS ##
+
+Part 1 Video 3: About Fastlane
+Intro Script:
+Trying to keep a handle on certificates, profiles, builds, screenshots, metadata, and many other App Store requirements can send a mild-mannered iOS developer over the edge. If you've been there, you'll love learning how fastlane can automate and streamline all these pain points, and much more. Hi, this is Brian, and if you're a fan of daily tutorials on iOS, Android and all points in between, be sure to press the subscribe button. You won't be disappointed.
+
+Outro Script:
+Without an automation tool like fastlane, manually interacting with the App Store can drive a sane person bonkers. What gives you the most trouble? Is it managing certificates, profiles, screenshots, or something else? Let me know in the comments below.
+
+Notes: We *might* choose to clip from ##Tools on down in this episode. This remaining content explores Terminal and Text Editor options important in the course context, but perhaps not an asset in a more stand-alone YouTube setting. 
+
+Part 1 Video 5: Registration
 Intro Script:
 
 Outro Script:
+
+
+Notes:
+
+Part 1 Video 8: Provisioning
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 2 Video 2: Team Code Signing
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 2 Video 3: Match
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 2 Video 5: Lane Tips
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 3 Video 2: Build and Package
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 3 Video 4: Pilot
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 3 Video 5: Other Testing Options 
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 4 Video 2: Metadata
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 4 Video 5: Snapshot
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 4 Video 8: Deliver
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 5 Video 2: Git
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 5 Video 3: Unit Tests
+Intro Script:
+
+Outro Script:
+
+Notes:
+
+
+Part 5 Video 6: Slack Notifications
+Intro Script:
+
+Outro Script:
+
+Notes:
+
 
