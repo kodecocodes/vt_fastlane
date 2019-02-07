@@ -32,8 +32,8 @@ Basic familiarity with Xcode and the App Store ecosystem.
 ## Part 1: Getting Started
 
 1. *Introduction*: Let's preview what you'll be learning in this course, and why it's important. [FREE]
-2. *Challenge: Store Tasks*: See how deeply we rely on the Developer Portal and App Store Connect, and where common pain points are. [FREE]
-3. *About Fastlane*: Learn how `fastlane's` powerful automation tools can help you streamline your iOS workflows, and review the tools you'll need for this course.
+2. *Challenge: Store Tasks*: See how deeply we rely on the Developer Portal and App Store Connect, and where common pain points are. 
+3. *About Fastlane*: Learn how `fastlane's` powerful automation tools can help you streamline your iOS workflows, and review the tools you'll need for this course.[FREE]
 4. *Installing Fastlane*: Install `fastlane` and its dependencies, then add it to our course's sample project. 
 5. *Registration*: Learn about `fastlane` actions, and how the `produce` action can automatically register your app with App Store Connect.
 6. *Challenge: Using Produce*: Learn about `fastlane` lanes, then practice creating your own lane to register your app with `produce`. 
