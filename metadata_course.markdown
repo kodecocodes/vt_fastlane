@@ -73,7 +73,7 @@ Basic familiarity with Xcode and the App Store ecosystem.
 6. *Challenge: Adding Snapshot*: Practice setting up snapshot and using it into your lanes, then further customize the devices and languages it uses.
 7. *Frames*: Learn to further enhance automatically generated screenshots by adding custom frames, backgrounds, captions, and colors with `fastlane` `frameit`.
 8. *Deliver*: Discover how to upload and submit your app, it's screenshots and metadata, and more using `fastlane` `deliver`.
-9. *Challenge: App Submission*: Practice completing your delivery lanes by adding snaptshot, frameit, and deliver to your custom lanes, and then extend this with language-specific customizations.
+9. *Challenge: App Submission*: Practice completing your delivery lanes by adding snapshot, frameit, and deliver to your custom lanes, and then extend this with language-specific customizations.
 10. *Conclusion*: Let's review what you learned in this section, and discuss what's next.
 
 ## Part 5: Advanced
