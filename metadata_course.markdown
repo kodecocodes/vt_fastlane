@@ -1,5 +1,4 @@
 # Course Metadata
-Provide a description and the final title for the course. These descriptions must be **between 100 and 160 characters long**.
 
 ### Course Title: 
 fastlane for iOS
@@ -29,14 +28,6 @@ Basic familiarity with Xcode and the App Store ecosystem.
 -----
 
 # Video Metadata
-
-
-
-List out each part of the course and each video within that part. For each video, provide a description that is **between 100 and 160 characters long**. Some examples are below.
-
-If a video uses a different language, platform, or editor than is used in the rest of the course, specify in brackets at the end of the description.
-
-The first video in each course is automatically free to non-subscribers. Choose one other video that you think might entice people to subscribe and watch the entire course, and mark it with [FREE] at the end of the description.
 
 ## Part 1: Getting Started
 
