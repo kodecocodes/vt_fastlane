@@ -1,24 +1,24 @@
 # Course Promo Video
 
-Does this sound familiar? Development of your new iOS App is cruising along smoothly when you slam into a problem with the Developer Portal or App Store Connect. Suddenly, instead of coding, you're sidelined by broken Certificates, Profiles, managing builds and testers, or wrestling with screenshots, metadata and other App Store requirements. There's got to be a better way.
+Does this sound familiar? Your iOS App is cruising along until… you slam into a Developer Portal or App Store Connect problem. Suddenly, you're sidelined by broken Certificates, test distribution problems, or screenshot and app submission issues. There's got to be a better way.
 
-Complete my course to learn how `fastlane` can help you cruise past these common pitfalls by automating your iOS team workflows!
+Complete my course to learn how `fastlane` can help you cruise past these pitfalls by automating your workflows!
 
-You'll learn:
+You'll learn to:
 
 Demo: [TODO: Installing `fastlane`.]
-How to install and configure `fastlane` for an iOS project.
+Install and configure `fastlane`.
 
 Demo: [TODO: Run team code signing sync.]
-How `fastlane` automates Development workflow tasks like syncing certificates, devices and provisioning profiles.
+Automate Development tasks like syncing certificates and provisioning profiles.
 
 Demo: [TODO: Test Flight and Third Party teasers.]
-How `fastlane` streamlines Beta Testing tasks like building, submitting and distributing test builds.
+Streamline how you build, submit, and distribute Test builds.
 
 Demo: [TODO: Sped up auto screenshot creation.]
-How `fastlane` can transform how you prepare, build and submit your app's screenshots, metadata, and more to the App Store and even help you avoid common rejections.
+Avoid App Store rejections, and save hours generating app screenshots, metadata and more.
 
 Demo: [TODO: Git workflow.]
-How `fastlane` goes beyond the App Store to automate app versioning, git commits, unit tests, documentation, notifications and more.
+Automate even more, like app versioning and commits, unit tests, documentation and Slack notifications.
 
 This course is available now for raywenderlich.com subscribers.
