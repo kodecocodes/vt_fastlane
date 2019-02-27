@@ -1,6 +1,6 @@
 # Course Promo Video
 
-Does this sound familiar? Your iOS App is cruising along until… you slam into a Developer Portal or App Store Connect problem. Suddenly, you're sidelined by broken Certificates, test distribution problems, or screenshot and app submission issues. There's got to be a better way.
+Does this sound familiar? Your next iOS App is cruising along until… you slam into a Developer Portal or App Store Connect problem. Suddenly, you're sidelined by broken Certificates, test distribution problems, or screenshot and app submission issues. There's got to be a better way.
 
 Complete my course to learn how `fastlane` can help you cruise past these pitfalls by automating your workflows!
 
