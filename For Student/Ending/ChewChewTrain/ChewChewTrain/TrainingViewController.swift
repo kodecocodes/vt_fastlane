@@ -92,7 +92,6 @@ class TrainingViewController: UIViewController {
 
 		// TODO : animate
 		treatTimeStackView.isHidden = false
-		resultStackView.isHidden = true
-
+		resultStackView.isHidden = true/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	}
 }
