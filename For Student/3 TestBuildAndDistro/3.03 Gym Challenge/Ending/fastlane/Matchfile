@@ -1,0 +1,8 @@
+git_url("git@gitlab.com:brainslab/certificates.git")
+
+storage_mode("git")
+
+type("development")
+
+force(true)
+
