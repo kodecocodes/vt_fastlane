@@ -21,13 +21,13 @@ platform :ios do
   lane :sync_device_info do
     register_devices(
       devices_file: "fastlane/Devicefile"
-    )
-  end
+      )
+    end
 
-  desc "Sync team Development assets"
-  lane :sync_all_development do
-    sync_device_info
-    match(type: "development")
-  end
+    desc "Sync team Development assets"
+    lane :sync_all_development do
+      sync_device_info
+      match(type: "development")
+    end
 
 end

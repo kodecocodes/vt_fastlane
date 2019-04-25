@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.017694">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: Switch to ios build_adhoc lane" time="0.001739">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: Switch to ios sync_signing_assets lane" time="0.00171">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: Switch to ios sync_device_info lane" time="0.001413">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="4: register_devices" time="1.014243">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="5: match" time="5.553473">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: increment_build_number" time="1.759738">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="7: gym" time="75.696887">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="8: installr" time="13.327379">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
