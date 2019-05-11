@@ -1,0 +1,10 @@
+/.swiftlint.yml
+*.cer
+*.mobileprovision
+/build_Appstore
+/build_AdHoc
+fastlane/screenshots/*
+report.xml
+Preview.html
+/fastlane/Fastfile
+/fastlane/README.md

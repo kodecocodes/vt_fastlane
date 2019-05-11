@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ChewChewTrainTests.xctest' tests='7' failures='0'>
+  <testsuite name='ChewChewTrainTests.ChewChewTrainTests' tests='7' failures='0'>
+    <testcase classname='ChewChewTrainTests.ChewChewTrainTests' name='testAction_0' time='0.001'/>
+    <testcase classname='ChewChewTrainTests.ChewChewTrainTests' name='testAction_1' time='0.000'/>
+    <testcase classname='ChewChewTrainTests.ChewChewTrainTests' name='testAction_2' time='0.000'/>
+    <testcase classname='ChewChewTrainTests.ChewChewTrainTests' name='testAction_3' time='0.000'/>
+    <testcase classname='ChewChewTrainTests.ChewChewTrainTests' name='testChallengeContainsExpectedElements' time='0.000'/>
+    <testcase classname='ChewChewTrainTests.ChewChewTrainTests' name='testTrainingModelHIsNotEmpty' time='0.000'/>
+    <testcase classname='ChewChewTrainTests.ChewChewTrainTests' name='testTrainingModelNotNil' time='0.001'/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,145 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/AppDelegate.swift",
+      "line": 32,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/AppDelegate.swift",
+      "line": 33,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingModel.swift",
+      "line": 34,
+      "symbol": "Challenge.action",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingModel.swift",
+      "line": 35,
+      "symbol": "Challenge.hint",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingModel.swift",
+      "line": 41,
+      "symbol": "TrainingModel.challenges",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 31,
+      "symbol": "TrainingViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 33,
+      "symbol": "TrainingViewController.challenges",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 34,
+      "symbol": "TrainingViewController.challengeIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 35,
+      "symbol": "TrainingViewController.treatsEarned",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 39,
+      "symbol": "TrainingViewController.challengeLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 40,
+      "symbol": "TrainingViewController.challengeHint",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 41,
+      "symbol": "TrainingViewController.questionLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 42,
+      "symbol": "TrainingViewController.treatCountLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 43,
+      "symbol": "TrainingViewController.treatTimeStackView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 44,
+      "symbol": "TrainingViewController.resultStackView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 48,
+      "symbol": "TrainingViewController.nextButtonTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 52,
+      "symbol": "TrainingViewController.yesButtonTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 55,
+      "symbol": "TrainingViewController.humanYesButtonTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 58,
+      "symbol": "TrainingViewController.noButtonTapped(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brian/Desktop/ChewChewTrain/ChewChewTrain/TrainingViewController.swift",
+      "line": 64,
+      "symbol": "TrainingViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/brian/Desktop/ChewChewTrain"
+}

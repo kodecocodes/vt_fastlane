@@ -1,3 +1,8 @@
 author: Chew Chew Doggies
 output: ../Documentation
 min_acl: internal
+xcodebuild_arguments:
+    - "-project"
+    - "./ChewChewTrain.xcodeproj"
+    - "-scheme"
+    - "ChewChewTrain"
