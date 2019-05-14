@@ -15,6 +15,7 @@
 		D30058C92273BD2E0005DAA0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30058C82273BD2E0005DAA0 /* SnapshotHelper.swift */; };
 		D345D508217FFD420097C973 /* TrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D345D507217FFD420097C973 /* TrainingModel.swift */; };
 		D345D50A217FFD6C0097C973 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D345D509217FFD6C0097C973 /* TrainingViewController.swift */; };
+		D3E4C029228B7507009620CD /* ChewChewTrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4C028228B7507009620CD /* ChewChewTrainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,7 +26,7 @@
 			remoteGlobalIDString = D2A5F1FF1F4A9144005CD714;
 			remoteInfo = ChewChewTrain;
 		};
-		D358B3DC21DD763D00003DB6 /* PBXContainerItemProxy */ = {
+		D3E4C02B228B7507009620CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D2A5F1F81F4A9143005CD714 /* Project object */;
 			proxyType = 1;
@@ -48,9 +49,9 @@
 		D32EEDD121D5A54300B3463C /* ChewChewTrain.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChewChewTrain.entitlements; sourceTree = "<group>"; };
 		D345D507217FFD420097C973 /* TrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModel.swift; sourceTree = "<group>"; };
 		D345D509217FFD6C0097C973 /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
-		D358B3D721DD763D00003DB6 /* ChewChewTrainUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChewChewTrainUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3DE991A21E00C0E00852D6C /* ChewChewTrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChewChewTrainTests.swift; sourceTree = "<group>"; };
-		D3DE991C21E00C0E00852D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3E4C026228B7507009620CD /* ChewChewTrainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChewChewTrainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3E4C028228B7507009620CD /* ChewChewTrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChewChewTrainTests.swift; sourceTree = "<group>"; };
+		D3E4C02A228B7507009620CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +69,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D358B3D421DD763D00003DB6 /* Frameworks */ = {
+		D3E4C023228B7507009620CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -82,8 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				D2A5F2021F4A9144005CD714 /* ChewChewTrain */,
-				D3DE991921E00C0E00852D6C /* ChewChewTrainTests */,
 				D30058BF2273BA140005DAA0 /* Fastlane Snapshots */,
+				D3E4C027228B7507009620CD /* ChewChewTrainTests */,
 				D2A5F2011F4A9144005CD714 /* Products */,
 				D32EEDD221D5A5D000B3463C /* Frameworks */,
 			);
@@ -95,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				D2A5F2001F4A9144005CD714 /* ChewChewTrain.app */,
-				D358B3D721DD763D00003DB6 /* ChewChewTrainUITests.xctest */,
 				D30058BE2273BA140005DAA0 /* Fastlane Snapshots.xctest */,
+				D3E4C026228B7507009620CD /* ChewChewTrainTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,11 +134,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D3DE991921E00C0E00852D6C /* ChewChewTrainTests */ = {
+		D3E4C027228B7507009620CD /* ChewChewTrainTests */ = {
 			isa = PBXGroup;
 			children = (
-				D3DE991A21E00C0E00852D6C /* ChewChewTrainTests.swift */,
-				D3DE991C21E00C0E00852D6C /* Info.plist */,
+				D3E4C028228B7507009620CD /* ChewChewTrainTests.swift */,
+				D3E4C02A228B7507009620CD /* Info.plist */,
 			);
 			path = ChewChewTrainTests;
 			sourceTree = "<group>";
@@ -180,23 +181,23 @@
 			productReference = D30058BE2273BA140005DAA0 /* Fastlane Snapshots.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		D358B3D621DD763D00003DB6 /* ChewChewTrainUITests */ = {
+		D3E4C025228B7507009620CD /* ChewChewTrainTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D358B3E021DD763D00003DB6 /* Build configuration list for PBXNativeTarget "ChewChewTrainUITests" */;
+			buildConfigurationList = D3E4C02D228B7507009620CD /* Build configuration list for PBXNativeTarget "ChewChewTrainTests" */;
 			buildPhases = (
-				D358B3D321DD763D00003DB6 /* Sources */,
-				D358B3D421DD763D00003DB6 /* Frameworks */,
-				D358B3D521DD763D00003DB6 /* Resources */,
+				D3E4C022228B7507009620CD /* Sources */,
+				D3E4C023228B7507009620CD /* Frameworks */,
+				D3E4C024228B7507009620CD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D358B3DD21DD763D00003DB6 /* PBXTargetDependency */,
+				D3E4C02C228B7507009620CD /* PBXTargetDependency */,
 			);
-			name = ChewChewTrainUITests;
-			productName = ChewChewTrainUITests;
-			productReference = D358B3D721DD763D00003DB6 /* ChewChewTrainUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = ChewChewTrainTests;
+			productName = ChewChewTrainTests;
+			productReference = D3E4C026228B7507009620CD /* ChewChewTrainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -253,8 +254,8 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = D2A5F1FF1F4A9144005CD714;
 					};
-					D358B3D621DD763D00003DB6 = {
-						CreatedOnToolsVersion = 10.1;
+					D3E4C025228B7507009620CD = {
+						CreatedOnToolsVersion = 10.2.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D2A5F1FF1F4A9144005CD714;
 					};
@@ -274,8 +275,8 @@
 			projectRoot = "";
 			targets = (
 				D2A5F1FF1F4A9144005CD714 /* ChewChewTrain */,
-				D358B3D621DD763D00003DB6 /* ChewChewTrainUITests */,
 				D30058BD2273BA140005DAA0 /* Fastlane Snapshots */,
+				D3E4C025228B7507009620CD /* ChewChewTrainTests */,
 			);
 		};
 /* End PBXProject section */
@@ -298,7 +299,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D358B3D521DD763D00003DB6 /* Resources */ = {
+		D3E4C024228B7507009620CD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,10 +328,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D358B3D321DD763D00003DB6 /* Sources */ = {
+		D3E4C022228B7507009620CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E4C029228B7507009620CD /* ChewChewTrainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,10 +344,10 @@
 			target = D2A5F1FF1F4A9144005CD714 /* ChewChewTrain */;
 			targetProxy = D30058C32273BA140005DAA0 /* PBXContainerItemProxy */;
 		};
-		D358B3DD21DD763D00003DB6 /* PBXTargetDependency */ = {
+		D3E4C02C228B7507009620CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D2A5F1FF1F4A9144005CD714 /* ChewChewTrain */;
-			targetProxy = D358B3DC21DD763D00003DB6 /* PBXContainerItemProxy */;
+			targetProxy = D3E4C02B228B7507009620CD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -417,6 +419,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -469,6 +472,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -556,40 +560,42 @@
 			};
 			name = Release;
 		};
-		D358B3DE21DD763D00003DB6 /* Debug */ = {
+		D3E4C02E228B7507009620CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YBJVXRAQH;
-				INFOPLIST_FILE = ChewChewTrainUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				INFOPLIST_FILE = ChewChewTrainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.brian-schick.ChewChewTrainUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brian-schick.ChewChewTrainTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChewChewTrain;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChewChewTrain.app/ChewChewTrain";
 			};
 			name = Debug;
 		};
-		D358B3DF21DD763D00003DB6 /* Release */ = {
+		D3E4C02F228B7507009620CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YBJVXRAQH;
-				INFOPLIST_FILE = ChewChewTrainUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				INFOPLIST_FILE = ChewChewTrainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.brian-schick.ChewChewTrainUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brian-schick.ChewChewTrainTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChewChewTrain;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChewChewTrain.app/ChewChewTrain";
 			};
 			name = Release;
 		};
@@ -623,11 +629,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D358B3E021DD763D00003DB6 /* Build configuration list for PBXNativeTarget "ChewChewTrainUITests" */ = {
+		D3E4C02D228B7507009620CD /* Build configuration list for PBXNativeTarget "ChewChewTrainTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D358B3DE21DD763D00003DB6 /* Debug */,
-				D358B3DF21DD763D00003DB6 /* Release */,
+				D3E4C02E228B7507009620CD /* Debug */,
+				D3E4C02F228B7507009620CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

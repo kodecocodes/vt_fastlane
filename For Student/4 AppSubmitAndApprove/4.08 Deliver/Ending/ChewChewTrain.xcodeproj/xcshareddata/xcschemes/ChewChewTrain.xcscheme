@@ -38,6 +38,16 @@
                ReferencedContainer = "container:ChewChewTrain.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D3E4C041228B7646009620CD"
+               BuildableName = "ChewChewTrainTests.xctest"
+               BlueprintName = "ChewChewTrainTests"
+               ReferencedContainer = "container:ChewChewTrain.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

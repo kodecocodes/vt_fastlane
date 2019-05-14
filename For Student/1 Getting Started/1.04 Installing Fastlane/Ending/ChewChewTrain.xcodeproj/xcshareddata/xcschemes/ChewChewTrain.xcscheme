@@ -52,7 +52,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D3DE991721E00C0E00852D6C"
+               BlueprintIdentifier = "D38F4023228B64DE000CE866"
                BuildableName = "ChewChewTrainTests.xctest"
                BlueprintName = "ChewChewTrainTests"
                ReferencedContainer = "container:ChewChewTrain.xcodeproj">
