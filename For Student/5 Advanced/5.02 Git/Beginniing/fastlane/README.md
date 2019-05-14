@@ -26,6 +26,11 @@ fastlane ios register_app
 fastlane ios get_dev_certs
 ```
 
+### ios bootstrap_code_signing
+```
+fastlane ios bootstrap_code_signing
+```
+Re-obtain match code-signing credentials after switching to a Beginning or Ending project folder
 ### ios sync_device_info
 ```
 fastlane ios sync_device_info
