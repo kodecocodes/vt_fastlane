@@ -50,7 +50,7 @@ Basic familiarity with Xcode and the App Store ecosystem.
 4. *Challenge: Using Match*: Practice creating a team code-signing lane with `match`, then customize app settings and automatically register your iOS devices.
 5. *Lane Tips*: Learn how to switch between your custom lanes, and how to control lane flow, work with variables, pass and use parameters, and more.
 6. *Environment and Settings*: Discover when it's best to use fastlane actions directly in the command line, within your own custom lanes, how to efficiently store project-wide settings, and how to document your own lanes. 
-7. *Challenge: Lane Update*: Practice adding more powerful lanes, updating your existing lanes with more powerful features, and consolidating project settings.
+7. *Challenge: Lane Upgrades*: Practice adding more powerful lanes, updating your existing lanes with more powerful features, and consolidating project settings.
 8. *Conclusion*: Let's sum up what you learned in this section, and get a look at what's next.
 
 ## Part 3: Test Builds and Distribution
