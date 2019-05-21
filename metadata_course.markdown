@@ -40,7 +40,7 @@ Basic familiarity with Xcode and the App Store ecosystem.
 7. *Certificate Management*: Review the importance of certificates, and then learn how `fastlane's` `cert` action fully automates all aspects of getting and managing certificates for you.
 8. *Provisioning*: Review the role of provisioning profiles, then see how `fastlane` `sigh` can automate and streamline managing these.
 9. *Challenge: Creating Custom Lanes*: Practice creating a new lane with `cert` and `sigh`, then practice setting up a project configuration `Fastfile`.
-10.*Conclusion*: Let's review the `fastlane` basics you've just learned in this section, and see what's next.
+10. *Conclusion*: Let's review the `fastlane` basics you've just learned in this section, and see what's next.
 
 ## Part 2: Team Development
 
@@ -86,4 +86,4 @@ Basic familiarity with Xcode and the App Store ecosystem.
 6. *Slack*: Discover how to easily add powerful custom team notifications to your with a Slack account and `fastlane's` `slack` action.
 7. *Plugins*: Discover the several ways to find and use third party fastlane plugins and extended actions, and how to create your own.
 8. *Best Practices*: Review the best practices we've learned, focusing on how best to abstract and organize lanes for efficiency and clarity, and the use special-purpose meta lanes. 
-9. *Conclusions*: Let's wrap up what we've learned about fastlane, and where you can go from here.
+9. *Conclusion*: Let's wrap up what we've learned about fastlane, and where you can go from here.
