@@ -9,11 +9,19 @@ In this course, you'll learn to use fastlane to automate core iOS workflows and 
 ### Difficulty Level:
 Intermediate
 
-### Prereqs - To be added as Author's Notes to first video
+### Prereqs
 Basic familiarity with Xcode and the App Store ecosystem.
 
-### Where to go next - To be added as Author's Notes to last video
-* [Todo: Add any recommendations for courses, books, etc. to check out after your course]
+### Where to go next
+* www.raywenderlich.com/4418-beginning-git
+* www.raywenderlich.com/4289-mastering-git
+* www.raywenderlich.com/3530-testing-in-ios
+* www.ruby-lang.org
+* www.ruby-lang.org/en/documentation/ruby-from-other-languages
+* ruby.github.io/TryRuby
+* docs.fastlane.tools
+* fastlane.tools/#contribute
+* fastlane.tools/#integrations
 
 ### Language, Editor and Platform versions used in this course:
 
