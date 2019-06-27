@@ -6,7 +6,7 @@ Complete my course to learn how `fastlane` can help you cruise past these pitfal
 
 You'll learn to:
 
-Demo: [TODO: Installing `fastlane`.]
+Demo: 1.04-3-DemoFastlane.mp4, beginning at 1:15
 Install and configure `fastlane`.
 
 Demo: [TODO: Run team code signing sync.]
