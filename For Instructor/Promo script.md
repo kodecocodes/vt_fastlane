@@ -9,16 +9,16 @@ You'll learn to:
 Demo: 1.04-3-DemoFastlane.mp4, beginning at 1:15
 Install and configure `fastlane`.
 
-Demo: [TODO: Run team code signing sync.]
+Demo: [TODO: 2.03 - Team code signing sync.]
 Automate Development tasks like syncing certificates and provisioning profiles.
 
-Demo: [TODO: Test Flight and Third Party teasers.]
+Demo: [TODO: 3.04 - Test Flight and Third Party teasers.]
 Streamline how you build, submit, and distribute Test builds.
 
-Demo: [TODO: Sped up auto screenshot creation.]
+Demo: [TODO: 4.04 = Speed up auto screenshot creation.]
 Avoid App Store rejections, and save hours generating app screenshots, metadata and more.
 
-Demo: [TODO: Git workflow.]
+Demo: [TODO: 5.02 - Git workflow.]
 Automate even more, like app versioning and commits, unit tests, documentation and Slack notifications.
 
 This course is available now for raywenderlich.com subscribers.
