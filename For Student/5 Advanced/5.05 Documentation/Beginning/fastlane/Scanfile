@@ -1,0 +1,3 @@
+scheme("ChewChewTrainTests")
+clean(true)
+open_report(true)
