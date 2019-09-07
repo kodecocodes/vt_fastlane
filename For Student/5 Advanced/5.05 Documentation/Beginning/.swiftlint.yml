@@ -1,0 +1,6 @@
+included:
+  - ChewChewTrain
+  - ChewChewTrainTests
+  
+disabled_rules:
+- line_length

@@ -1,0 +1,12 @@
+app_identifier "com.razeware.chew"
+username "bschick1@me.com"
+team_name "Brian Schick"
+
+# negative_apple_sentiment(level: :skip)
+# curse_words(level: :warn)
+# future_functionality(level: :error)
+# other_platforms(level: :error)
+# placeholder_text(level: :error)
+# test_words(level: :error)
+# unreachable_urls(level: :error)
+custom_text(data: ["thunderbolt", "lightning", "frightening"], level: :warn)

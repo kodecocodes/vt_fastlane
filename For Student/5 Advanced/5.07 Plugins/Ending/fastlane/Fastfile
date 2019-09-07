@@ -1,0 +1,174 @@
+default_platform(:ios)
+
+platform :ios do
+  
+  slack_hook = "https://hooks.slack.com/services/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"
+  
+  lane :register_app do
+    produce(
+    username: "bschick1@mac.com",
+    app_identifier: "com.razeware.chew",
+    app_name: "Chew Chew Train",
+    team_name: "Brian Schick",
+    itc_team_name: "Brian Schick"
+    )
+  end
+  
+  lane :get_dev_certs do
+    cert(development: true)
+    sigh(development: true)
+  end
+
+  desc "Re-obtain match code-signing credentials after switching to a Beginning or Ending project folder"
+  lane :bootstrap_code_signing do
+    sync_device_info
+    match(type: "development")
+    match(type: "adhoc")
+    match(type: "appstore")
+  end
+  
+  desc "Update iOS UDID's on the Developer Portal"
+  lane :sync_device_info do
+    register_devices(
+    devices_file: "fastlane/Devicefile"
+    )
+  end
+  
+  desc "Sync team Code-Signing assets"
+  lane :sync_signing_assets do |options|
+    sync_device_info
+    selectedType = options[:type]
+    match(type: selectedType)
+  end
+  
+  desc "Build for App Store submission"
+  lane :build_appstore do
+    
+    ensure_git_status_clean
+    ensure_git_branch(branch: "staging")
+    git_pull
+    
+    scan
+    lint
+    document
+    app_icons
+    
+    sync_signing_assets(type: "appstore")
+    increment_build_number
+    gym(
+    output_directory: "build_Appstore",
+    export_method: "app-store"
+    )
+    
+    commit_version_bump(
+    force: true,
+    message: "Version bumped by fastlane"
+    )
+    add_git_tag(
+    grouping: "fastlane",
+    build_number: lane_context[SharedValues::BUILD_NUMBER]
+    )
+    push_to_git_remote
+    
+    v = lane_context[SharedValues::VERSION_NUMBER]
+    b = lane_context[SharedValues::BUILD_NUMBER]
+    d = sh "date -u"
+    slack(
+    
+    payload: {"FASTLANE PRODUCTION — #{v}(#{b})" => d},
+    slack_url: slack_hook
+    
+    )
+    
+  end
+  
+  desc "Build for Ad Hoc submission"
+  lane :build_adhoc do
+    
+    ensure_git_status_clean
+    ensure_git_branch(branch: "staging")
+    git_pull
+    
+    scan
+    lint
+    document
+    app_icons
+    
+    sync_signing_assets(type: "adhoc")
+    increment_build_number
+    gym(
+    output_directory: "build_AdHoc",
+    export_method: "ad-hoc"
+    )
+    
+    commit_version_bump(
+    force: true,
+    message: "Version bumped by fastlane"
+    )
+    add_git_tag(
+    grouping: "fastlane",
+    build_number: lane_context[SharedValues::BUILD_NUMBER]
+    )
+    push_to_git_remote
+    
+  end
+  
+  lane :distribute_to_appstore do
+    build_appstore
+    pilot(
+    team_name: "Brian Schick",
+    changelog: "Version {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+  
+  lane :distribute_to_installr do
+    build_adhoc
+    installr(
+    api_token: "uFUksUle4CbbnKDSHhmgtj6xB7QnVET1",
+    notes: "Version {lane_context[SharedValues::VERSION_NUMBER]}, Build {lane_context[SharedValues::BUILD_NUMBER]}"
+    )
+  end
+  
+  lane :release do
+    precheck
+    build_appstore
+    snapshot
+    frameit(gold: true)
+    deliver(
+    ipa: "./build_AppStore/ChewChewTrain.ipa",
+    run_precheck_before_submit: false,
+    force: true,
+    team_name: "Brian Schick"
+    )
+  end
+  
+  lane :lint do
+    swiftlint(
+    mode: :autocorrect,
+    config_file: ".swiftlint.yml",
+    output_file: "swiftlintOutput.txt",
+    ignore_exit_status: false
+    )
+  end
+  
+  lane :document do
+    jazzy config: "./fastlane/jazzy.yaml"
+  end
+  
+  lane :ping_slack do
+    slack(
+    message: "An important message about cheese!",
+    slack_url: slack_hook,
+    default_payloads: [],
+    payload: {"Cheese" => "Is quite tasty"}
+    )
+  end
+  
+  lane :app_icons do
+    appicon(
+    appicon_devices: [:iphone, :ios_marketing],
+    appicon_path: "ChewChewTrain/Assets.xcassets"
+    )
+  end
+  
+end
